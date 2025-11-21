@@ -31,7 +31,7 @@ jobs:
       if: steps.cache-r-packages.outputs.cache-hit != 'true'
       run: |
         Rscript -e 'install.packages(c("renv","knitr"))'
-        Rscript -e 'snapshot()'
+        Rscript -e 'renv::snapshot()'
         #Rscript -e 'renv::restore()'  # or install packages manually here
 
     # Cache Quarto CLI binaries
