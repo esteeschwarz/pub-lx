@@ -1,0 +1,35 @@
+---
+title: "samling"
+nocite: '@*'
+bibliography: sebald.bib
+echo: false
+warnings: false
+---
+
+first collection [documenting] of materials
+
+```{r}
+#| include: false
+1 + 1
+cat("the upsidedown")
+```
+
+## now alltogether
+
+
+![Q: Sebaldiana](https://www.stiftung-buchkunst.de/images/max/scans_cropped59.jpg){#fig-sebaldiana}
+
+![stable diffusion output Marienbader Elegie](https://ada-sub.dh-index.org/school/api/png/sebald-stable-diff-001.png){#fig-stable-01}
+
+## Q on bricolage
+```{r}
+#| echo: false
+#| include: false
+t<-readLines("notes.md")
+print(t)
+```
+
+{{< include notes.md >}}
+
+-----
+# refs

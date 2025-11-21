@@ -1,0 +1,60 @@
+name: Render and Deploy Quarto Website with R
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  render-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    # Cache R binaries and libraries (R installation itself caching is limited; we use setup-r action)
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v2
+      with:
+        r-version: '4.3.1'  # specify your desired R version
+
+    - name: Cache R packages
+      uses: actions/cache@v4
+      id: cache-r-packages
+      with:
+        path: ${{ env.R_LIBS_USER }}
+        key: ${{ runner.os }}-r-packages-${{ hashFiles('DESCRIPTION', 'renv.lock', 'packages.R') }}
+        restore-keys: |
+          ${{ runner.os }}-r-packages-
+
+    - name: Install R packages
+      if: steps.cache-r-packages.outputs.cache-hit != 'true'
+      run: |
+        Rscript -e 'install.packages(c("renv","knitr"))'
+        Rscript -e 'renv::restore()'  # or install packages manually here
+
+    # Cache Quarto CLI binaries
+    - name: Cache Quarto
+      uses: actions/cache@v4
+      id: cache-quarto
+      with:
+        path: ~/.quarto/bin
+        key: ${{ runner.os }}-quarto-${{ hashFiles('**/*.qmd','**/_quarto.yml') }}
+        restore-keys: |
+          ${{ runner.os }}-quarto-
+
+    - name: Install Quarto if not cached
+      if: steps.cache-quarto.outputs.cache-hit != 'true'
+      run: |
+        wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.3.340/quarto-1.3.340-linux-amd64.deb
+        sudo dpkg -i quarto-1.3.340-linux-amd64.deb
+
+    - name: Render Quarto site
+      run: quarto render _qmd/ --to html --output-dir q
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./q
