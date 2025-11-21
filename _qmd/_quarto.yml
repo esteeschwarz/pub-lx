@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: /Users/guhl/Documents/GitHub/wg-sebald/docs
+  output-dir: ../q
 
 website:
   title: "001"
