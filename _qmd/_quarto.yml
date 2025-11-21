@@ -16,7 +16,7 @@ website:
         text: pdf
       - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/szondi/docufiction/wg-sebald
         icon: github
-  base-url: /q/
+  #base-url: /q/
 
 format:
   html:
