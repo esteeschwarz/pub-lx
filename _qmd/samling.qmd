@@ -22,7 +22,7 @@ download.file("https://ada-sub.dh-index.org/school/api/png/sebald-stable-diff-00
 ![Q: Sebaldiana](sebaldiana.jpg){#fig-sebaldiana}
 
 ![stable diffusion output Marienbader Elegie](stable-diff.png){#fig-stable-01}
--->
+
 ## Q on bricolage
 ```{r}
 #| echo: false
