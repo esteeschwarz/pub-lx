@@ -61,6 +61,8 @@ jobs:
     - name: Render Quarto site
       run: |
         quarto render _qmd/ -P reload:false
+        ls
+        ls q
 
     # - name: Deploy to GitHub Pages
     #   uses: peaceiris/actions-gh-pages@v4
