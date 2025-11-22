@@ -38,5 +38,4 @@ print(t)
 
 {{< include notes.md >}}
 
------
-# refs
+# references {#references}
