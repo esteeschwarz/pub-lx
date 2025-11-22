@@ -39,11 +39,18 @@ jobs:
         Rscript -e 'renv::snapshot()'
         #Rscript -e 'renv::restore()'  # or install packages manually here
 
-    - name: Setup Quarto
+    - name: Set up Quarto
       uses: quarto-dev/quarto-actions/setup@v2
+      env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tinytex: true
-        version: "latest"
+          # To install LaTeX to build PDF book 
+          tinytex: true 
+   # - name: Setup Quarto
+      #uses: quarto-dev/quarto-actions/setup@v2
+      #with:
+        #tinytex: true
+        #version: "latest"
 
 
   #   # Cache Quarto CLI binaries
