@@ -3,7 +3,7 @@ title: "dokufiktion - w.g. sebald"
 author: "st. schwarz"
 format: 
   pdf:
-    latex_engine: pdflatex  # default
+    #latex_engine: pdflatex  # default
     fig-pos: "H" # Forces images to appear exactly where they are included
     # mainfont: Georgia
     # mainfont: 'TeX Gyre Termes'

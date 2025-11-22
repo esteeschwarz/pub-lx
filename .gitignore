@@ -32,3 +32,4 @@ assets/js/dist
 q
 **/_freeze/
 **/.quarto/
+**/.DS_Store
