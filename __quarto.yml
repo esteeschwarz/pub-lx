@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: ../q
 params:
-    reload: false
+  reload: true
 
 website:
   title: "001"

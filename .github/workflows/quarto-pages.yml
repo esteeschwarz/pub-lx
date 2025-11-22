@@ -51,7 +51,8 @@ jobs:
         sudo dpkg -i quarto-1.3.340-linux-amd64.deb
 
     - name: Render Quarto site
-      run: quarto render _qmd/ --to html --output-dir q
+      run: |
+        quarto render _qmd/ -P reload:false
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4

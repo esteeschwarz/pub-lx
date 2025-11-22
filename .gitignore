@@ -25,3 +25,10 @@ package-lock.json
 # Misc
 _sass/vendors
 assets/js/dist
+
+/.quarto/
+**/*.quarto_ipynb
+
+q
+**/_freeze/
+**/.quarto/

@@ -29,6 +29,11 @@ t<-readLines("notes.md")
 print(t)
 ```
 
+```{r}
+# predata<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/docufiction/wg-sebald/preprocessed.RData")
+# save.image(file = predata)
+```
+
 {{< include notes.md >}}
 
 -----
