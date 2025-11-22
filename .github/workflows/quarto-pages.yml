@@ -71,7 +71,7 @@ jobs:
     - name: Upload site artifact
       uses: actions/upload-pages-artifact@v3
       with:
-          path: "q"
+          path: "./q"
 
   deploy:
     environment:
