@@ -90,6 +90,7 @@ jobs:
     - name: Prepare combined site
       run: |
           mkdir site
+          ls _site
           cp -r _site/* site/
           cp -r q site/q
     - name: Upload site artifact
