@@ -64,11 +64,15 @@ jobs:
           ruby-version: 3.3
           bundler-cache: true
 
-    - name: Build site
-      run: bundle exec jekyll b
+    - name: Build jekyll site
+      run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
       env:
           JEKYLL_ENV: "production"
 
+    - name: Upload jekyll artifacts 
+      uses: actions/upload-pages-artifact@v3
+      with:
+          path: "_site${{ steps.pages.outputs.base_path }}"
 
     - name: Render Quarto site
       run: |
@@ -86,7 +90,7 @@ jobs:
     - name: Upload site artifact
       uses: actions/upload-pages-artifact@v3
       with:
-          path: "."
+          path: "./q0"
 
   deploy:
     environment:

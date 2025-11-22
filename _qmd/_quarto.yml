@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: ../q
+  output-dir: ../q0/q
 params:
     reload: false
 
