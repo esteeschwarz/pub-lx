@@ -87,10 +87,15 @@ jobs:
     #   with:
     #     github_token: ${{ secrets.GITHUB_TOKEN }}
     #     publish_dir: ./q
+    - name: Prepare combined site
+      run: |
+          mkdir site
+          cp -r _site/* site/
+          cp -r q site/q
     - name: Upload site artifact
       uses: actions/upload-pages-artifact@v3
       with:
-          path: "./q0"
+          path: "./site"
 
   deploy:
     environment:
