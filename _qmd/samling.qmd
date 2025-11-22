@@ -19,9 +19,9 @@ download.file("https://ada-sub.dh-index.org/school/api/png/sebald-stable-diff-00
 ## now alltogether
 
 
-<!--![Q: Sebaldiana](https://stiftung-buchkunst.de/images/max/scans_cropped59.jpg){#fig-sebaldiana}
-is not loading on git for pdf
-![stable diffusion output Marienbader Elegie](https://ada-sub.dh-index.org/school/api/png/sebald-stable-diff-001.png){#fig-stable-01}
+![Q: Sebaldiana](sebaldiana.jpg){#fig-sebaldiana}
+
+![stable diffusion output Marienbader Elegie](stable-diff.png){#fig-stable-01}
 -->
 ## Q on bricolage
 ```{r}
